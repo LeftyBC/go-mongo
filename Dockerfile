@@ -1,10 +1,10 @@
-FROM mongo:3.2
+FROM mongo:3.4
 
 RUN apt-get update && apt-get install -y wget make && \
-    mkdir -p /go /opt && \ 
+    mkdir -p /go /opt && \
     cd /tmp && \
-    wget https://storage.googleapis.com/golang/go1.7.3.linux-amd64.tar.gz && \
-    tar xzvf go1.7.3.linux-amd64.tar.gz && \
+    wget https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz && \
+    tar xzvf go1.8.3.linux-amd64.tar.gz && \
     mv go /opt
 
 ENV GOPATH /go
