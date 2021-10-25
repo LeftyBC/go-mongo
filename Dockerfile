@@ -1,10 +1,10 @@
 FROM mongo:3.6
 
-RUN apt-get update && apt-get install -y wget make && \
-    mkdir -p /go /opt && \
+RUN apt-get update && apt-get install -y wget make python3
+RUN mkdir -p /go /opt && \
     cd /tmp && \
-    wget https://storage.googleapis.com/golang/go1.10.3.linux-amd64.tar.gz && \
-    tar xzvf go1.10.3.linux-amd64.tar.gz && \
+    wget -q https://storage.googleapis.com/golang/go1.16.3.linux-amd64.tar.gz && \
+    tar xzvf go1.16.3.linux-amd64.tar.gz && \
     mv go /opt
 
 ENV GOPATH /go
